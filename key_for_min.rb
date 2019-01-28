@@ -3,19 +3,22 @@
 
 def key_for_min_value(name_hash)
   
-  key_for_min_value = ""
-  min_value = 0 
-  counter = 0 
-  name_hash.each do |name, value|
-    if counter == 0 
-      min_value = value
-      key_for_min_value = name
-    elsif value < min_value
-      min_value = value
-      key_for_min_value = name
+  if name_hash == {}
+    return nil 
+  else
+    key_for_min_value = ""
+    min_value = 0 
+    counter = 0 
+    name_hash.each do |name, value|
+      if counter == 0 
+        min_value = value
+        key_for_min_value = name
+      elsif value < min_value
+        min_value = value
+        key_for_min_value = name
+      end
+      counter += 1 
     end
-    counter += 1 
-  end
-  key_for_min_value
-
+    key_for_min_value
+  end 
 end
